@@ -42,6 +42,14 @@ Or run directly from PowerShell:
 .\payCalc.ps1
 ```
 
+### Run Without Downloading
+
+Paste this one-liner into any PowerShell window -- no files needed:
+
+```powershell
+$f=Join-Path $env:TEMP "payCalc.ps1";irm "https://raw.githubusercontent.com/JevonThompsonx/payCalc.bat/refs/heads/main/payCalc.ps1" -OutFile $f;powershell -ExecutionPolicy Bypass -NoProfile -File $f;Remove-Item $f -Force
+```
+
 ## Requirements
 
 - Windows with PowerShell 5.1+
